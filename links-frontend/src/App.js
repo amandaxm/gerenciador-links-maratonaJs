@@ -1,5 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link} from 'react-router-dom'
+import SignIn from '../src/screens/SingIn/index';
+import SignUp from '../src/screens/SignUp/index';
+import ManagerLinks from '../src/screens/Manager/Links/index';
+import CreateLinks from '../src/screens/Manager/Links/Create/index';
+import EditLinks from '../src/screens/Manager/Links/Edit/index';
+import Home from '../src/screens/Home/index'
+
 const App= () =>{
     return(
         <BrowserRouter>
@@ -15,11 +22,12 @@ const App= () =>{
             </nav>
 
             <Switch>
-                <Route path="/sign-in"><h1>Alo</h1></Route>
-                <Route path="/sign-up"><h1>Up</h1></Route>
-                <Route path="/manage/links/create"><h1>Aslo</h1></Route>
-                <Route path="/manage/links/edit"><h1>Aslo</h1></Route>
-                <Route path="/manage/links"><h1>Alos</h1></Route>
+                <Route path="/sign-in"><SignIn /> </Route>
+                <Route path="/sign-up"><SignUp /></Route>
+                <Route path="/manage/links/create"><CreateLinks/></Route>
+                <Route path="/manage/links/edit"><EditLinks /></Route>
+                <Route path="/manage/links"><ManagerLinks /></Route>
+                <Route path="/" exact><Home /></Route>
 
 
             </Switch>

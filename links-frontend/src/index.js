@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import '../src/styless/main.scss';
+import './styless/main.scss';
 ReactDOM.render(<App />,document.getElementById('root'));
