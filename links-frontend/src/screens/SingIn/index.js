@@ -1,10 +1,21 @@
-import React from 'react'
-const SignIn = () => {
-    return (
+import React from 'react';
+import {connect} from 'react-redux';
+import {SignIn} from './SignInActions';
+
+const SignIn = (props) => {
+  const {account, signIn} = props;
+    
+  const submitHandler=(e)=>{
+    e.preventDefault();
+   // const data = getFormData(e);
+   // signIn(data);
+  }
+  
+  return (
         <div className="container h-100 pt-5">
           <h1>Sign In</h1>
           <div className="d-flex flex-column h-100">
-            <form>
+            <form onSubmit={submitHandler}>
               <div className="form-group">
                 <label>Email</label>
                 <input type="text" className="form-control" name="email" />
@@ -21,4 +32,7 @@ const SignIn = () => {
             </div>
     )
 }
-export default SignIn;
+const mapStateToProps = (state) => {
+  return { account: state.account.account };
+};
+export default connect(mapStateToProps, {signIn})(SignIn);
